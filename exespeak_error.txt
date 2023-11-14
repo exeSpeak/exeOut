@@ -1,0 +1,28 @@
+[Error Code Definitions]
++ throw error #1001 back to user if the first statement of a "exeSpeak" statement block does not contain either "exe.outTo=value" or "exe.inFrom=value"
++ throw error #1001 back to user if the first statement of a "exeSpeak" statement block contains either "exe.outTo=value" or "exe.inFrom=value" but they have no value
++ exe.error.1001 should read, "exe.error.1001 : both exe.outTo and exe.inFrom are currently missing or unset"
++ throw error #1002 back to user if an "exe.outTo=value" statement or an "exe.inFrom=value" statement requests an unknown programming language
++ exe.error.1002 should read, "exe.error.1002 : either exe.outTo=value or exe.inFrom=value is set to unknown programming language"
++ throw error #1003 back to user if more than one header is found
++ exe.error.1003 should read, "exe.error.1003 : more than one header was found"
++ throw error #1004 back to user if a primary statement begins with neither "exe." nor "+"
++ exe.error.1004 should read, "exe.error.1004 : a statement was found without a starting exe. or plus"
++ throw error #1005 back to user if a closed primary statement does not end with a semicolon
++ exe.error.1005 should read, "exe.error.1005 : a closed primary statement does not end with a semicolon"
++ throw error #1006 back to user if an open primary statement is never closed
++ exe.error.1006 should read, "exe.error.1006 : an open primary statement is never closed"
++ additional instructions will be provided at a later time
+
+
+
+
++ throw error #2149 back to user if user attempts to declare a user-defined exe.id that is expressly prohibited or is already used by a pre-defined item
++ exe.error.2149 should read, "exe.error.2149 : user cannot name an item 'id' as it is already pre-defined"
++ throw error #2150 back to user if multiple exe.object items form a circular reference through inheritence
++ exe.error.2149 should read, "exe.error.2149 : parent-level exe.object items cannot inherit from child-level exe.object items"
+
+
++ additional instructions will be provided at a later time
+
++ for example, the following code should throw an error: "exe.vars: +id=3; +end;" because the user cannot call an item "id"
